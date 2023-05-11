@@ -1,0 +1,56 @@
+C51 COMPILER V9.60.0.0   LCD_DISPLAY                                                       02/13/2023 11:08:32 PAGE 1   
+
+
+C51 COMPILER V9.60.0.0, COMPILATION OF MODULE LCD_DISPLAY
+OBJECT MODULE PLACED IN lcd display.OBJ
+COMPILER INVOKED BY: C:\Keil_8051\C51\BIN\C51.EXE lcd display.c OPTIMIZE(8,SPEED) BROWSE DEBUG OBJECTEXTEND TABS(2)
+
+line level    source
+
+   1          #include<reg51.h>
+   2          //////////// PIN DEFINED ///////////////
+   3          #define DATA P0
+   4          sbit RS=P2^0;
+   5          sbit E=P2^1;
+   6          //////////////////////////////////////////
+   7          #include"delay.h"
+   8          #include"lcd.h"
+   9          
+  10          
+  11          void main()
+  12          {
+  13   1      char i;
+  14   1      init_lcd();
+  15   1        while(1)
+  16   1        {
+  17   2          cmd_lcd(0x80);
+  18   2          string_lcd("LCD DISPLAY");
+  19   2          cmd_lcd(0xc0);
+  20   2          string_lcd("** 8051 ** ");
+  21   2          
+  22   2          for(i=0;i<5;i++)
+  23   2          {
+  24   3            cmd_lcd(0x1C);
+  25   3            delay(30000); 
+  26   3          }
+  27   2          for(i=0;i<5;i++)
+  28   2          {
+  29   3            cmd_lcd(0x18);
+  30   3            delay(30000); 
+  31   3          }   
+  32   2        }
+  33   1      }
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =    217    ----
+   CONSTANT SIZE    =     24    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----    ----
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

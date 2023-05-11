@@ -1,0 +1,79 @@
+BL51 BANKED LINKER/LOCATER V6.22                                                        12/22/2014  11:47:41  PAGE 1
+
+
+BL51 BANKED LINKER/LOCATER V6.22, INVOKED BY:
+C:\KEIL\C51\BIN\BL51.EXE dacsin.obj TO dacsin RAMSIZE (256)
+
+
+MEMORY MODEL: SMALL
+
+
+INPUT MODULES INCLUDED:
+  dacsin.obj (DACSIN)
+  C:\KEIL\C51\LIB\C51S.LIB (?C_STARTUP)
+
+
+LINK MAP OF MODULE:  dacsin (DACSIN)
+
+
+            TYPE    BASE      LENGTH    RELOCATION   SEGMENT NAME
+            -----------------------------------------------------
+
+            * * * * * * *   D A T A   M E M O R Y   * * * * * * *
+            REG     0000H     0008H     ABSOLUTE     "REG BANK 0"
+            IDATA   0008H     0001H     UNIT         ?STACK
+
+            * * * * * * *   C O D E   M E M O R Y   * * * * * * *
+            CODE    0000H     0003H     ABSOLUTE     
+            CODE    0003H     0043H     UNIT         ?PR?MAIN?DACSIN
+            CODE    0046H     000CH     UNIT         ?C_C51STARTUP
+
+
+
+OVERLAY MAP OF MODULE:   dacsin (DACSIN)
+
+
+SEGMENT
+  +--> CALLED SEGMENT
+---------------------
+?C_C51STARTUP
+  +--> ?PR?MAIN?DACSIN
+
+
+
+SYMBOL TABLE OF MODULE:  dacsin (DACSIN)
+
+  VALUE           TYPE          NAME
+  ----------------------------------
+
+  -------         MODULE        DACSIN
+  C:0000H         SYMBOL        _ICE_DUMMY_
+  D:00A0H         PUBLIC        P2
+  C:0003H         PUBLIC        main
+  -------         PROC          MAIN
+  -------         DO            
+  D:0004H         SYMBOL        i
+  D:0006H         SYMBOL        j
+  -------         ENDDO         
+  C:0003H         LINE#         3
+  C:0003H         LINE#         4
+  C:0003H         LINE#         7
+  C:0003H         LINE#         8
+BL51 BANKED LINKER/LOCATER V6.22                                                      12/22/2014  11:47:41  PAGE 2
+
+
+  C:0003H         LINE#         9
+  C:0006H         LINE#         10
+  C:0006H         LINE#         11
+  C:0008H         LINE#         12
+  C:0016H         LINE#         13
+  C:0020H         LINE#         14
+  C:002FH         LINE#         15
+  C:002FH         LINE#         16
+  C:0031H         LINE#         17
+  C:003FH         LINE#         18
+  -------         ENDPROC       MAIN
+  -------         ENDMOD        DACSIN
+
+Program Size: data=9.0 xdata=0 code=82
+LINK/LOCATE RUN COMPLETE.  0 WARNING(S),  0 ERROR(S)

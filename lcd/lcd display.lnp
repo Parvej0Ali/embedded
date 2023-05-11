@@ -1,0 +1,3 @@
+"lcd display.obj" 
+TO "lcd display" 
+RAMSIZE(256) 
